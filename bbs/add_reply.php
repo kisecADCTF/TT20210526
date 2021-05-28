@@ -6,8 +6,8 @@ include('../utils/general.php');
 
 if (!isset($_POST['submit']))
 	exit('Illegal call to this page.');
-$NO = array("/</","/>/");
-$YES = array("&lt","&gt");
+$NO = array("/</","/>/","/\"/");
+$YES = array("&lt","&gt","&quot;");
 $post_ID = $_POST['post_ID'];
 $board_ID = GetBoardID($post_ID);
 $user_ID = $_SESSION['user_ID'];
