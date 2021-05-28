@@ -11,6 +11,10 @@ $username = addslashes($username);
 $password = MD5($_POST['password']);
 $permission = $_POST['permission'];
 $permission = addslashes($permission);
+if($username < 5){
+    echo "<script>alert('5자이상');</script>";
+    exit;
+}
 
 $now = date('Y-m-d H:i:s', time());
 $query = "INSERT INTO user(username, password, default_permission, registration_time, money) ";
