@@ -9,11 +9,8 @@ if (!isset($_POST['submit']))
 $NO = array("/</","/>/");
 $YES = array("&lt","&gt");
 $post_ID = $_POST['post_ID'];
-$post_ID=preg_replace($NO,$YES,$post_ID);
-
 $board_ID = GetBoardID($post_ID);
 $user_ID = $_SESSION['user_ID'];
-$user_ID=preg_replace($NO,$YES,$user_ID);
 $permission = GetPermission($user_ID, $board_ID);
 if ($permission < PERM_USER)
 	exit('Not enough permission.');
