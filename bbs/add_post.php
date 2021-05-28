@@ -10,7 +10,7 @@ if (!isset($_POST['submit']))
     exit('Illegal call to this page.');
 
 $board_ID = $_POST['board_ID'];
-$board_ID = addslashes($board_ID);
+//$board_ID = addslashes($board_ID);
 $user_ID = $_SESSION['user_ID'];
 echo $board_ID;
 
@@ -22,10 +22,10 @@ $post_name = $_POST['title'];
 $NO = array("<",">"," ","&");
 $YES = array("&lt;","&gt;","&nbsp;","&amp;");
 $post_name=preg_replace($NO,$YES,$post_name);
-$post_name = addslashes($post_name);
+//$post_name = addslashes($post_name);
 $content = $_POST['content'];
 $content=preg_replace($NO,$YES,$content);
-$content = addslashes($content);
+//$content = addslashes($content);
 $now = date('Y-m-d H:i:s', time());
 
 $file = $_FILES['uploadfile'];
