@@ -19,8 +19,8 @@ if ($permission < PERM_USER)
     exit('Not enough permission.');
 
 $post_name = $_POST['title'];
-$NO = array["<","\\(",">"," ","&"];
-$YES = array["&lt;","&#40;","&gt;","&nbsp;","&amp;"];
+$NO = array("<",">"," ","&");
+$YES = array("&lt;","&gt;","&nbsp;","&amp;");
 $post_name=preg_replace($NO,$YES,$post_name);
 $post_name = addslashes($post_name);
 $content = $_POST['content'];
