@@ -65,6 +65,7 @@ function ShowPostInput($board_ID, $permission)
 EOT;
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +88,12 @@ EOT;
         </nav>
     </div>
 </header>
-
+<div id="search_box">
+<form method="get" action="search.php">
+    <input type = "text" placeholder="search" name="search">
+    <button>search</button>
+</form>
+    </div>
 <div class="container markdown-body">
     <h1 class="page-title">Board - <?php echo($board_name); ?></h1>
     <?php ShowPosts($board_ID, $user_ID, $permission); ?>
@@ -96,6 +102,8 @@ EOT;
         Designed by Kisec
     </footer>
 </div>
+
+
 </body>
 </html>
 
