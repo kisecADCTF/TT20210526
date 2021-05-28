@@ -10,6 +10,7 @@ if (!($_SESSION['default_permission'] >= PERM_ADMINISTRATOR))
 	exit('Not enough permission.');
 
 $board_name = $_POST['board_name'];
+$board_name =preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i","",$board_name);
 $board_name = addslashes($board_name);
 $query = "INSERT INTO board(board_name) VALUES ('$board_name')";
 

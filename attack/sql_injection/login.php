@@ -20,8 +20,10 @@ include("../dbconnect.php");
 if(isset($_POST['id']))
 {
     $id = $_POST['id'];
+    $id=preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i","",$id);
     $id = addslashes($id);
-    $pwd = $_POST['pwd'];
+    $pwd = $_POST['pwd'];``
+    $pwd=preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i","",$pwd);
     $sql = "SELECT * FROM user WHERE (id ='$id' AND pwd='$pwd')";
     echo $sql ."<br/>";
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
