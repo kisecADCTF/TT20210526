@@ -30,7 +30,7 @@ $path = "./upload/";
 $file_name = $file['name'];
 if(!empty($file_name))
 {
-    if(!move_uploaded_file($file['tmp_name'], $path. $file_name))
+    if(!move_uploaded_file($file['tmp_name'], $path . $file_name))
         exit('Uploadfile failed');
 }
 
