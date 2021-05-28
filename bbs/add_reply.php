@@ -11,7 +11,6 @@ $post_ID = $_POST['post_ID'];
 $post_ID=preg_replace($NO,$YES,$post_ID);
 $NO = array("<",">"," ","&");
 $YES = array("&lt;","&gt;","&nbsp;","&amp;");
-$post_ID = addslashes($post_ID);
 $board_ID = GetBoardID($post_ID);
 $user_ID = $_SESSION['user_ID'];
 $user_ID=preg_replace($NO,$YES,$user_ID);
@@ -21,7 +20,6 @@ if ($permission < PERM_USER)
 
 $content = $_POST['content'];
 $content=preg_replace($NO,$YES,$content);
-$content = addslashes($content);
 $now = date('Y-m-d H:i:s', time());
 $query = "INSERT INTO post_reply(user_ID, post_ID, create_time, content) ";
 $query .= "VALUES ('$user_ID', '$post_ID', '$now', '$content')";
