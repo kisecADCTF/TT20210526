@@ -9,8 +9,8 @@ if (!isset($_POST['submit']))
 	
 $post_ID = $_POST['post_ID'];
 $post_ID=preg_replace($NO,$YES,$post_ID);
-$NO = array("<",">"," ","&");
-$YES = array("&lt;","&gt;","&nbsp;","&amp;");
+$NO = array("/</","/>/");
+$YES = array("&lt","&gt");
 $board_ID = GetBoardID($post_ID);
 $user_ID = $_SESSION['user_ID'];
 $user_ID=preg_replace($NO,$YES,$user_ID);
