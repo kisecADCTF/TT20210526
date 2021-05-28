@@ -7,6 +7,7 @@ include("../utils/general.php");
 if (!isset($_GET['board_ID']))
     exit('Illegal call to this page.');
 
+
 $board_ID = $_GET['board_ID'];
 $board_ID = addslashes($board_ID);
 $user_ID = $_SESSION['user_ID'];
