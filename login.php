@@ -10,6 +10,8 @@ $username = $_POST['username'];
 $username = addslashes($username);
 $password = MD5($_POST['password']);
 
+
+
 $query = "SELECT * FROM user WHERE (username = '$username' AND password = '$password')";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 if ($result = mysqli_fetch_array($result))
