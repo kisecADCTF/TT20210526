@@ -12,7 +12,7 @@
 <?php
 
     $file = $_FILES['uploadfile'];
-    if(preg_match('/php/i',$file)){//php가 들어가있는 파일 확인
+    if(preg_match("/php/i",$file)){//php가 들어가있는 파일 확인
         echo "php사용금지";
         exit;
     }
